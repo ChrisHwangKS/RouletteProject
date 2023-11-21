@@ -18,6 +18,10 @@ public class RouletteGame : MonoBehaviour
     {
         // ∑Í∑ø ø¿∫Í¡ß∆Æ √ ±‚»≠
         m_RouletteObject.InitializeRoulette(itemStrings);
+
+        // ∑Í∑ø ºº∆√ ∆–≥Œ¿ª ∫Ò»∞º∫»≠ Ω√≈µ¥œ¥Ÿ.
+        m_SettingPanel.gameObject.SetActive(false);
+
     }
 
 }

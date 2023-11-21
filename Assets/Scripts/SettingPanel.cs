@@ -40,7 +40,7 @@ public class SettingPanel : MonoBehaviour
         string[] itemStrings = new string[6];
 
         // 입력 필드의 문자열을 배열에 담습니다.
-        for(int i = 0; i<itemStrings.Length; ++i)
+        for (int i = 0; i < itemStrings.Length; ++i)
         {
             // 배열 요소에 설정된 입력 필드 컴포넌트를 얻습니다.
             TMP_InputField inputField = m_InputFields[i];
@@ -50,7 +50,7 @@ public class SettingPanel : MonoBehaviour
 
             // 입력 필드 문자열을 배열 요소에 저장합니다.
             itemStrings[i] = inputFieldString;
-            
+
         }
 
         // 배열을 반환합니다.
