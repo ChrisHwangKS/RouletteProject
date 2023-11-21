@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class RouletteObject : MonoBehaviour
 {
@@ -121,6 +122,8 @@ public class RouletteObject : MonoBehaviour
         // 룰렛 오브젝트의 RectTransform 컴포넌트
         RectTransform rouletteRectTransform = m_RouletteObject.transform as RectTransform;
 
+        float minAngle = 90.0f;
+
         foreach (TMP_Text textComponent in m_ItemTexts)
         {
             // 선의 시작점
@@ -142,13 +145,21 @@ public class RouletteObject : MonoBehaviour
             // 각도를 구하고, 가장 작은 각을 형성하는 요소의 선을 빨간색으로 표시해보세요.
 
             float angle = Mathf.Abs(Vector2.SignedAngle(upVector, textComponent.rectTransform.up));
+            float temp = angle;
+            if(temp <= minAngle) minAngle = temp;
 
+            lineEnd = new Vector2(Mathf.Sin(minAngle), Mathf.Cos(minAngle))*400.0f;
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(lineStart, lineEnd);
+            
             // Mathf.Abs(value) : value 에 대한 절댓값을 반환합니다.
 
             //Vector2.SignedAngle(from,to)
             // Vector2.SignedAngle(from,to) : from 과 to 벡터 사이의 각도를 반환합니다.
         }
 
+        
     }
 #endif
 
