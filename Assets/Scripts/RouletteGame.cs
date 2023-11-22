@@ -24,4 +24,17 @@ public class RouletteGame : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// 설정 패널을 초기화합니다.
+    /// </summary>
+    public void InitialSettingPanel()
+    {
+        // 패널 오브젝트 활성화
+        m_SettingPanel.gameObject.SetActive(true);
+
+        // 세팅 패널 초기화
+        m_SettingPanel.InitializeSettingPanel();
+
+    }
+
 }
